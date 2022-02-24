@@ -11,25 +11,27 @@ import FiltroPeliculas from "./peliculas/FiltroPeliculas";
 import CrearPersonajes from "./Personajes/CrearPersonajes";
 import EditarPersonajes from "./Personajes/EditarPersonajes";
 import IndicePersonajes from "./Personajes/IndicePersonajes";
+import RedireccionarLanding from "./utils/RedireccionarLanding";
 
 const rutas = [
     {path: '/generos/crear', componente: CrearGenero},
-    {path: '/generos/editar', componente: EditarGenero},
-    {path: '/generos', componente: IndiceGeneros},
+    {path: '/generos/editar/:id(\\d+)', componente: EditarGenero},
+    {path: '/generos', componente: IndiceGeneros, exact: true},
 
     {path: '/personajes/crear', componente: CrearPersonajes},
-    {path: '/personajes/editar', componente: EditarPersonajes},
-    {path: '/personajes', componente: IndicePersonajes},
+    {path: '/personajes/editar/:id(\\d+)', componente: EditarPersonajes},
+    {path: '/personajes', componente: IndicePersonajes, exact: true},
 
     {path: '/cines/crear', componente: CrearCines},
-    {path: '/cines/editar', componente: EditarCines},
-    {path: '/cines', componente: IndiceCines},
+    {path: '/cines/editar/:id(\\d+)', componente: EditarCines},
+    {path: '/cines', componente: IndiceCines, exact: true},
 
     {path: '/peliculas/crear', componente: CrearPeliculas},
-    {path: '/peliculas/editar', componente: EditarPeliculas},
+    {path: '/peliculas/editar/:id(\\d+)', componente: EditarPeliculas},
     {path: '/peliculas/filtrar', componente: FiltroPeliculas},
 
-    {path: '/', componente: LandingPage, exact: true}
+    {path: '/', componente: LandingPage, exact: true},
+    {path: '*', componente: RedireccionarLanding}
 ]
 
 export default rutas;
