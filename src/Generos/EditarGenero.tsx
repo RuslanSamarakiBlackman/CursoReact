@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import FormularioGeneros from './FormularioGeneros';
 
 export default function EditarGenero(){
 
@@ -7,8 +8,13 @@ export default function EditarGenero(){
 
     return(
         <>
-        <h3>Editar Género</h3>
-        <h4>El id es {id}</h4>
+            <h3>Editar Género</h3>
+            <FormularioGeneros modelo={{nombre: 'Acción'}}
+                onSubmit={async valores => {
+                    await new Promise(r => setTimeout(r, 3000))
+                    console.log(valores)
+                }}
+            /> 
         </>
     )
 }
