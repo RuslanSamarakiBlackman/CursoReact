@@ -1,4 +1,3 @@
-import { ErrorMessage } from "formik/dist/ErrorMessage";
 import React from "react";
 
 export default function MostrarErrorCampos(props: mostrarErrorCampoProps){

@@ -1,6 +1,7 @@
-import { Form, Formik } from 'formik';
+import { Field, Form, Formik } from 'formik';
 import React from 'react'
 import { generoDTO } from '../Generos/Generos.model';
+import Button from '../utils/Button';
 
 export default function FiltroPeliculas(){
 
@@ -8,7 +9,7 @@ export default function FiltroPeliculas(){
         titulo: '',
         generoId: 0,
         proximosEstrenos: false,
-        encines: false
+        enCines: false
     }
 
     const generos: generoDTO[] = [{id:1, nombre:'Echii'}, {id:2, nombre:'Hentai'}]
@@ -43,6 +44,30 @@ export default function FiltroPeliculas(){
                                 </select>
 
                             </div>
+
+                            <div className='form-group mx-sm-3 mb-2'>
+                                <Field className='form-check-input' id='proximosEstrenos'
+                                name='proximosEstrenos' type='checkbox'/>
+                                <label className='form-check-label'
+                                htmlFor='proximosEstrenos'>Próximos estrenos</label>
+                            </div>
+                            <div className='form-group mx-sm-3 mb-2'>
+                                <Field className='form-check-input' id='enCines'
+                                name='enCines' type='checkbox'/>
+                                <label className='form-check-label'
+                                htmlFor='enCines'>En cines</label>
+                            </div>
+
+                            <Button
+                                className='btn btn-primary mb-2 mx-sm-3'
+                                onClick={() => formikProps.submitForm()}
+                            >Filtrar</Button>
+
+                            <Button
+                                className='btn btn-danger mb-2'
+                                onClick={() => formikProps.setValues(valorInicial)}
+                            >Limpiar</Button>
+                            
                         </div>                        
                     </Form>
                 )}
@@ -57,5 +82,5 @@ interface filtroPeliculasForm{
     titulo: string;
     generoId: number;
     proximosEstrenos: boolean;
-    encines: boolean;
+    enCines: boolean;
 }

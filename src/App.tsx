@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import './App.css';
-import IndiceGeneros from './Generos/indiceGeneros';
-import LandingPage from './LandingPage';
 import rutas from './route-config';
 import Menu from './utils/Menu';
 import ConfigurarValidaciones from './Validaciones'
